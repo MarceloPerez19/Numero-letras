@@ -33,7 +33,7 @@ namespace Numero_letras
             */
 
             int num = Int32.Parse(this.txtCantidad.Text);
-            this.txtResultado.Text = UTILS.NumerosLetras.getDecenas(num);
+            this.txtResultado.Text = UTILS.NumerosLetras.getCentenas(num);
 
 
         }

@@ -13,7 +13,7 @@ namespace UTILS
 
         static String[] Decenas = {"CERO" ,"diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
 
-        static String[] Centenas = {"cien", "doscientos", "trecientos", "cuatrocientos", "quinientos", "seiscientos",
+        static String[] Centenas = {"CERO", "ciento", "doscientos", "trecientos", "cuatrocientos", "quinientos", "seiscientos",
             "setecientos", "ochocientos", "novecientos"};
 
         public static void TestUnidades()
@@ -51,6 +51,22 @@ namespace UTILS
                 if (residuo > 0)
                     aux += " y " + getUnidades(residuo);
             }
+            return aux;
+        }
+
+        public static String getCentenas(int num)
+        {
+
+            String aux = "";
+            int resi = num % 100;
+            int residuo = num % 10;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = Centenas[num/100];
+                aux += " " + getDecenas(resi);
             return aux;
         }
 
