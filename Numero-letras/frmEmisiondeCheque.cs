@@ -19,9 +19,23 @@ namespace Numero_letras
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            //validar
+           /* if(this.txtCantidad.Text.Length==0)
+            {
+                MessageBox.Show("Por favor solo numeros");
+                this.txtCantidad.Focus();
+                return;
+            }*/
+
             //UTILS.NumerosLetras.TestUnidades();
-            int num = Int32.Parse(this.txtResultado.Text);
+            /*int num = Int32.Parse(this.txtCantidad.Text);
             this.txtResultado.Text = UTILS.NumerosLetras.getUnidades(num);
+            */
+
+            int num = Int32.Parse(this.txtCantidad.Text);
+            this.txtResultado.Text = UTILS.NumerosLetras.getDecenas(num);
+
+
         }
     }
 }
