@@ -15,7 +15,11 @@ namespace Numero_letras
         public frmEmisiondeCheque()
         {
             InitializeComponent();
+            Bitmap img = new Bitmap(Application.StartupPath + @"\img\nombre.png");
+            this.BackgroundImage = img;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
+        
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
@@ -33,8 +37,17 @@ namespace Numero_letras
             */
 
             int num = Int32.Parse(this.txtCantidad.Text);
-            this.txtResultado.Text = UTILS.NumerosLetras.getCentenas(num);
+            this.txtResultado.Text = UTILS.NumerosLetras.getUnidadMil(num);
 
+        }
+
+        private void txtResultado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
