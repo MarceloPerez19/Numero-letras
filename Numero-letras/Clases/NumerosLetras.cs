@@ -69,7 +69,7 @@ namespace UTILS
                 int residuo = num % 10;
                 aux = Decenas[num / 10];
                 if (residuo > 0)
-                    aux += " y " + getUnidades(residuo);
+                    aux += "  " + getUnidades(residuo);
             }
             return aux;
         }
@@ -79,19 +79,184 @@ namespace UTILS
 
             String aux = "";
             int resi = num % 100;
-            int residuo = num % 10;
             if (num >= 0 && num < 20)
                 aux = getUnidades(num);
             else if (num >= 20 && num < 100)
                 aux = getDecenas(num);
             else if (num >= 100 && num < 1000)
-                aux = Centenas[num/100];
-                aux += " " + getDecenas(resi);
+            {
+                int residuo = num % 1000;
+                aux = Centenas[num / 100];
+                if (residuo > 0)
+                    aux += "  " + getDecenas(residuo);
+            }
             return aux;
         }
+
+        public static String getUnidadMil(int num)
+        {
+
+            String aux = "";
+            int resi = num % 1000;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = getCentenas(num);
+            else if (num >= 1000 && num < 20000)
+            {
+                int residuo = num % 1000;
+                aux = UnidadMil[num / 1000];
+                if (residuo > 0)
+                    aux += "  " + getCentenas(residuo);
+            }
+            return aux;
+        }
+
+        public static String getDecenaMil(int num)
+        {
+
+            String aux = "";
+            int resi = num % 10000;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = getCentenas(num);
+            else if (num >= 1000 && num < 20000)
+                aux = getUnidadMil(num);
+            else if (num >= 20000 && num < 100000)
+            {
+                int residuo = num % 10000;
+                aux = DecenasMil[num / 10000];
+                if (residuo > 0)
+                    aux += "  " + getUnidadMil(residuo);
+            }
+            return aux;
+        }
+
+        public static String getCentenaMil(int num)
+        {
+
+            String aux = "";
+            int resi = num % 100000;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = getCentenas(num);
+            else if (num >= 1000 && num < 20000)
+                aux = getUnidadMil(num);
+            else if (num >= 20000 && num < 100000)
+                aux = getDecenaMil(num);
+            else if (num >= 100000 && num < 900000)
+            {
+                int residuo = num % 100000;
+                aux = CentenasMil[num / 100000];
+                if (residuo > 0)
+                    aux += "  " + getDecenaMil(residuo);
+            }
+            return aux;
+        }
+
+        public static String getUnidadMillon(int num)
+        {
+
+            String aux = "";
+            int resi = num % 100000;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = getCentenas(num);
+            else if (num >= 1000 && num < 20000)
+                aux = getUnidadMil(num);
+            else if (num >= 20000 && num < 100000)
+                aux = getDecenaMil(num);
+            else if (num >= 100000 && num < 999999)
+                aux = getCentenaMil(num);
+            else if(num>=1000000 && num<20000000)
+            {
+                int residuo = num % 1000000;
+                aux = UnidadesMillon[num / 1000000];
+                if (residuo > 0)
+                    aux += "  " + getCentenaMil(residuo);
+            }
+            return aux;
+        }
+
+        public static String getDecenaMillon(int num)
+        {
+
+            String aux = "";
+            int resi = num % 100000;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = getCentenas(num);
+            else if (num >= 1000 && num < 20000)
+                aux = getUnidadMil(num);
+            else if (num >= 20000 && num < 100000)
+                aux = getDecenaMil(num);
+            else if (num >= 100000 && num < 999999)
+                aux = getCentenaMil(num);
+            else if (num >= 1000000 && num < 20000000)
+                aux = getUnidadMillon(num);
+            else if(num>=20000000 && num<99999999)
+            {
+                int residuo = num % 10000000;
+                aux = DecenasMillon[num / 10000000];
+                if (residuo > 0)
+                    aux += "  " + getUnidadMillon(residuo);
+            }
+            return aux;
+        }
+
+        public static String getCentenaMillon(int num)
+        {
+
+            String aux = "";
+            int resi = num % 100000;
+            if (num >= 0 && num < 20)
+                aux = getUnidades(num);
+            else if (num >= 20 && num < 100)
+                aux = getDecenas(num);
+            else if (num >= 100 && num < 1000)
+                aux = getCentenas(num);
+            else if (num >= 1000 && num < 20000)
+                aux = getUnidadMil(num);
+            else if (num >= 20000 && num < 100000)
+                aux = getDecenaMil(num);
+            else if (num >= 100000 && num < 999999)
+                aux = getCentenaMil(num);
+            else if (num >= 1000000 && num < 20000000)
+                aux = getUnidadMillon(num);
+            else if (num >= 20000000 && num < 100000000)
+                aux = getDecenaMillon(num);
+            else if(num>= 100000000 && num<1000000000)
+            {
+                int residuo = num % 100000000;
+                aux = CentenasMillon[num / 100000000];
+                if (residuo > 0)
+                    aux += "  " + getDecenaMillon(residuo);
+            }
+            return aux;
+        }
+
+
+
+
+
+    }
 
        
 
 
-    }
 }
+

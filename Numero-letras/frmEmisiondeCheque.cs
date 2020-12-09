@@ -37,7 +37,7 @@ namespace Numero_letras
             */
 
             int num = Int32.Parse(this.txtCantidad.Text);
-            this.txtResultado.Text = UTILS.NumerosLetras.getUnidadMil(num);
+            this.txtResultado.Text = UTILS.NumerosLetras.getCentenaMillon(num);
 
         }
 
